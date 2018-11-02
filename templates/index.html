@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type=text/javascript>
+			var timing_druppel1 = '{{timing_druppel1}}';
+			var timing_druppel2 = '{{timing_druppel2}}';
+			var timing_tussen1 = '{{timing_tussen1}}';
+			var timing_tussen2 = '{{timing_tussen2}}';
+			var timing_flash = '{{timing_flash}}';
+			var timing_pauze = '{{timing_pauze}}';
+			$(function() {
+				$('a#test').bind('click', function() {
+					$.ajax({
+						url: '',
+						type: 'POST',
+						data: $('#f').serialize(),
+						succes: function(params) {
+							console.log(params);
+						}
+					});
+					return false;
+				});
+			});
+		</script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+			$( function() {
+				$( "#slider_timing_druppel1" ).slider({ min: 0, max:2, step:0.0001, value: timing_druppel1, slide: function( event, ui ) {
+						$( "#timing_druppel1" ).val( ui.value );
+					} });
+				$( "#slider_timing_druppel2" ).slider({ min: 0, max:2, step:0.0001, value: timing_druppel2, slide: function( event, ui ) {
+						$( "#timing_druppel2" ).val( ui.value );
+					} });
+				$( "#slider_timing_tussen1" ).slider({ min: 0, max:2, step:0.0001, value: timing_tussen1, slide: function( event, ui ) {
+						$( "#timing_tussen1" ).val( ui.value );
+					} });
+				$( "#slider_timing_tussen2" ).slider({ min: 0, max:2, step:0.0001, value: timing_tussen2, slide: function( event, ui ) {
+						$( "#timing_tussen2" ).val( ui.value );
+					} });
+				$( "#slider_timing_flash" ).slider({ min: 0, max:2, step:0.0001, value: timing_flash, slide: function( event, ui ) {
+						$( "#timing_flash" ).val( ui.value );
+					} });
+				$( "#slider_timing_pauze" ).slider({ min: 0, max:2, step:0.0001, value: timing_pauze, slide: function( event, ui ) {
+						$( "#timing_pauze" ).val( ui.value );
+					} });
+			} );
+		</script>
+	</head>
+	<body>
+		<h1>Sliders</h1>
+		<div>
+			<label for="timing_druppel1">timing_druppel1:</label><div name="slider_timing_druppel1" id="slider_timing_druppel1"></div>
+			<label for="timing_druppel2">timing_druppel2:</label><div name="slider_timing_druppel2" id="slider_timing_druppel2"></div>
+			<label for="timing_tussen1">timing_tussen1:</label><div name="slider_timing_tussen1" id="slider_timing_tussen1"></div>
+			<label for="timing_tussen2">timing_tussen2:</label><div name="slider_timing_tussen2" id="slider_timing_tussen2"></div>
+			<label for="timing_flash">timing_flash:</label><div name="slider_timing_flash" id="slider_timing_flash"></div>
+			<label for="timing_pauze">timing_pauze:</label><div name="slider_timing_pauze" id="slider_timing_pauze"></div>
+		</div>
+		<form id="f" action="" method="POST">
+				<label for="timing_druppel1">timing_druppel1:</label>
+				<input id="timing_druppel1" name="timing_druppel1" value="{{timing_druppel1}}"><br/>
+				<label for="timing_druppel2">timing_druppel2:</label>
+				<input id="timing_druppel2" name="timing_druppel2" value="{{timing_druppel2}}"><br/>
+				<label for="timing_tussen1">timing_tussen1:</label>
+				<input id="timing_tussen1" name="timing_tussen1" value="{{timing_tussen1}}"><br/>
+				<label for="timing_tussen2">timing_tussen2:</label>
+				<input id="timing_tussen2" name="timing_tussen2" value="{{timing_tussen2}}"><br/>
+				<label for="timing_flash">timing_flash:</label>
+				<input id="timing_flash" name="timing_flash" value="{{timing_flash}}"><br/>
+				<label for="timing_pauze">timing_pauze:</label>
+				<input id="timing_pauze" name="timing_pauze" value="{{timing_pauze}}"><br/><br/>
+
+				<label for="exacutetimes">exacutetimes:</label>
+				<input id="exacutetimes" name="exacutetimes" value="{{exacutetimes}}"><br/>
+			<a href=# id=test><button class='btn btn-default'>Test</button></a>
+		</form>
+	</body>
+</html>
